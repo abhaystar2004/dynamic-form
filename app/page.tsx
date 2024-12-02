@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 type Field = {
   name: string;
@@ -80,7 +81,7 @@ const Notification = ({
     <div
       className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 px-4 py-2 rounded-lg shadow-lg transition-all duration-300 ease-in-out 
       ${
-        type === "success" ? "bg-green-500 text-white" : "bg-red-500 text-white"
+        type === "success" ? "bg-green-500 opacity-70 text-white" : "bg-red-500 opacity-70 text-white"
       }`}
     >
       {message}
@@ -184,7 +185,7 @@ const DynamicForm = () => {
   };
 
   return (
-    <main>
+    <main className="h-full w-full">
       <Navbar />
       <Image
         src="gradient-image.svg"
@@ -318,6 +319,7 @@ const DynamicForm = () => {
           />
         )}
       </div>
+      <Footer />
     </main>
   );
 };
